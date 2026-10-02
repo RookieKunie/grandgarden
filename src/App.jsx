@@ -3,7 +3,11 @@ import {
   Home, LogOut, Wallet, AlertTriangle, Receipt, Bell, Wrench, Users,
   LayoutDashboard, Settings as Cog, Building2, CheckCircle2, Search, Plus, Edit3, Trash2, ShieldCheck, QrCode, Calculator, Check, X, DollarSign, Send, FileText, QrCode as ScanIcon, Key, Lock, Upload, TrendingUp, Award, Zap, RefreshCw, ShieldAlert, Shield, Copy, History, FileCheck, Sparkles
 } from "lucide-react";
-import { supabase } from "./supabase";
+
+import { supabase } from "./lib/supabaseClient";
+import ArrearsGrid from "./pages/ArrearsGrid";
+import Payments from "./pages/Payments";
+import { supabase } from "./lib/supabaseClient";
 
 // ==========================================
 // MODULE 1: CONFIGURATION & DEFAULTS (LOCKED)

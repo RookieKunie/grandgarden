@@ -1,0 +1,67 @@
+Version: 1.0
+Last Updated: 2026-10-01
+ 
+Owner: GrandGarden Project
+Status: Approved
+
+# GrandGarden Implementation Plan
+## Phase 1 : Foundation
+- [ ] สร้างตาราง annual_debts
+- [ ] สร้างตาราง payments
+- [ ] สร้างตาราง payment_allocations
+- [ ] เชื่อม Supabase
+ 
+## Phase 2 : Finance Module
+- [ ] หน้าจอ Finance / Billing
+- [ ] แก้ไขยอดหนี้รายปี
+- [ ] เปลี่ยนสถานะ OPEN/PARTIAL/CLOSED
+ 
+## Phase 3 : Payment Allocation
+- [ ] รับชำระเงิน
+- [ ] ตัดหนี้อัตโนมัติ
+- [ ] สร้าง Ledger
+ 
+## Phase 4 : Documents
+- [ ] หนังสือทวงถาม
+- [ ] ใบแจ้งหนี้
+- [ ] ใบเสร็จ
+ 
+## Phase 5 : Reports
+- [ ] รายงานลูกหนี้
+- [ ] รายงานการรับชำระ
+- [ ] Audit Trail
+# Current Status
+ 
+Version 0.1
+ 
+Current System:
+- Login
+- Resident Portal
+- Admin Dashboard
+- Supabase Connection
+ 
+Target:
+- Finance & Billing System
+- Annual Debt Ledger
+- Payment Allocation Engine
+- Collection Notice
+- Invoice Management
+
+## 2569-10-01 ##
+
+GrandGarden Sprint 1
+
+### Sprint Result
+Status: SUCCESS
+Completed:
+- payment_allocations table created
+- Documentation completed
+Issues:
+- Hidden characters in copied SQL
+Resolution:
+- Re-typed SQL manually
+- Use clean editor before running SQL
+Next Sprint:
+- debt_year_detail upgrade
+- Payment Allocation Engine
+- Finance/Billing Module
