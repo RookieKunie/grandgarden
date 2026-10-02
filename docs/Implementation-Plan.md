@@ -65,3 +65,44 @@ Next Sprint:
 - debt_year_detail upgrade
 - Payment Allocation Engine
 - Finance/Billing Module
+
+## 2569-10-02
+
+GrandGarden Sprint 2
+ 
+### Sprint Result
+ 
+Status: SUCCESS
+ 
+Completed:
+- debt_year_detail upgraded
+- paid_amount column added
+- balance column added
+- status column added
+- updated_at column added
+- initial balance calculation completed
+Issues:
+- None
+Resolution:
+- N/A
+Next Sprint:
+- Payment Allocation Engine
+- Finance/Billing Module
+- Debt Ledger Testing
+Artifacts Created:
+- payment_allocations table
+- Supabase-Schema.sql
+
+## 2569-10-02
+
+GrandGarden Sprint 3
+
+### Sprint Result
+ 
+[✅] financeDashboard.jsx created
+ 
+Next:
+[ ] Finance Summary Cards
+[ ] Connect Supabase
+[ ] Annual Debt Ledger View
+[ ] Payment Allocation Audit View

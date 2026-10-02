@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import { supabase } from '../lib/supabase'
+import { supabase } from "../lib/supabaseClient";
 import { ALL_YEARS, EDITABLE_YEARS, CURRENT_YEAR_TH, baht } from '../lib/constants'
 import { outstandingOf } from '../lib/debtEngine'
 import { Search, Save } from 'lucide-react'

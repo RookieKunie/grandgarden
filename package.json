@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
+    "buffer": "^6.0.3",
     "lucide-react": "^1.48.0",
     "qrcode.react": "^4.2.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "th-promptpay-qr": "^1.0.6"
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -3,12 +3,10 @@ import {
   Home, LogOut, Wallet, AlertTriangle, Receipt, Bell, Wrench, Users,
   LayoutDashboard, Settings as Cog, Building2, CheckCircle2, Search, Plus, Edit3, Trash2, ShieldCheck, QrCode, Calculator, Check, X, DollarSign, Send, FileText, QrCode as ScanIcon, Key, Lock, Upload, TrendingUp, Award, Zap, RefreshCw, ShieldAlert, Shield, Copy, History, FileCheck, Sparkles
 } from "lucide-react";
-
+import FinanceDashboard from "./pages/financeDashboard";
 import { supabase } from "./lib/supabaseClient";
-import ArrearsGrid from "./pages/ArrearsGrid";
-import Payments from "./pages/Payments";
-import { supabase } from "./lib/supabaseClient";
-
+import ArrearsGrid from "./pages/arrearsGrid";
+import Payments from "./pages/payments";
 // ==========================================
 // MODULE 1: CONFIGURATION & DEFAULTS (LOCKED)
 // ==========================================
@@ -415,7 +413,7 @@ function AdminApp({ session, settings, houses, setHouses, slips, setSlips, repai
   const role = session.role;
   const currentPermissions = rolePermissions[role] || {};
 
-  const [adminTab, setAdminTab] = useState("houses");
+  const [adminTab, setAdminTab] = useState("finance");
   const [searchTerm, setSearchTerm] = useState("");
   const [editingHouse, setEditingHouse] = useState(null);
 
@@ -457,6 +455,7 @@ function AdminApp({ session, settings, houses, setHouses, slips, setSlips, repai
           <button onClick={() => setAdminTab("overview")} className={`py-2 px-4 rounded-xl ${adminTab === "overview" ? "bg-emerald-600 text-white" : "text-slate-600"}`}>📊 ภาพรวม</button>
           <button onClick={() => setAdminTab("houses")} className={`py-2 px-4 rounded-xl ${adminTab === "houses" ? "bg-emerald-600 text-white" : "text-slate-600"}`}>🏠 ทะเบียนบ้าน</button>
           <button onClick={() => setAdminTab("slips")} className={`py-2 px-4 rounded-xl ${adminTab === "slips" ? "bg-emerald-600 text-white" : "text-slate-600"}`}>🧾 ตรวจสลิป</button>
+          <button onClick={() => setAdminTab("finance")} className={`py-2 px-4 rounded-xl ${adminTab === "finance"? "bg-emerald-600 text-white" : "text-slate-600"}`}>💰 Finance</button>
         </div>
 
         {adminTab === "overview" && (
@@ -513,7 +512,22 @@ function AdminApp({ session, settings, houses, setHouses, slips, setSlips, repai
             ))}
           </div>
         )}
+
+          {adminTab === "finance" && (
+            <div
+            style={{
+            background: "red",
+            color: "white",
+            fontSize: "48px",
+            padding: "40px"
+        }}
+        >
+          FINANCE WORKING
+          </div>
+        )}
+
       </div>
+
 
       {editingHouse && (
         <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
