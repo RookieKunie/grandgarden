@@ -537,21 +537,13 @@ alert("ERROR: " + err.message);
           </div>
         )}
 
-          {adminTab === "finance" && (
-            <div
-            style={{
-            background: "red",
-            color: "white",
-            fontSize: "48px",
-            padding: "40px"
-        }}
-        >
-          FINANCE WORKING
-          </div>
+        {adminTab === "finance" && (
+          <FinanceDashboard
+          houses={houses}
+          slips={slips}
+          />
         )}
-
       </div>
-
 
       {editingHouse && (
         <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
@@ -593,6 +585,7 @@ export default function App() {
             ownerName: item.owner_name || `คุณลูกบ้าน ${index + 1}`,
             phone: item.phone ? String(item.phone) : `08${String(index + 1).padStart(8, '0')}`,
             area: item.area_sq_wah || 50,
+            totalDebt: item.total_debt || 0,
             isPaidArrears: false,
             isCommitteeDiscount: index === 2,
           }));

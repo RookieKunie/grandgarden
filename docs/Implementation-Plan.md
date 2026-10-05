@@ -69,11 +69,11 @@ Next Sprint:
 ## 2569-10-02
 
 GrandGarden Sprint 2
- 
+
 ### Sprint Result
- 
+
 Status: SUCCESS
- 
+
 Completed:
 - debt_year_detail upgraded
 - paid_amount column added
@@ -97,12 +97,26 @@ Artifacts Created:
 
 GrandGarden Sprint 3
 
-### Sprint Result
- 
-[✅] financeDashboard.jsx created
- 
-Next:
-[ ] Finance Summary Cards
-[ ] Connect Supabase
-[ ] Annual Debt Ledger View
+Status: SUCCESS
+
+Completed:
+
+[x] App.jsx / app.jsx Deployment Fix
+[x] House Registry Supabase Update
+[x] FinanceDashboard.jsx Created
+[x] Finance Menu Integration
+[x] Supabase Live Integration
+[x] Summary KPI Cards
+[x] Total Debt Calculation
+[x] Top 20 Debtors Ranking
+[x] 2 Decimal Currency Formatting
+[x] Annual Debt Ledger V1
+[x] Vercel Production Deployment Stable
+
+### Next Sprint
+
+[ ] Debt by Year Ledger
 [ ] Payment Allocation Audit View
+[ ] Debtor Aging Analysis
+[ ] Real Slip Workflow
+[ ] Collection Analytics
