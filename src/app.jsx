@@ -20,11 +20,11 @@ const DEFAULT_SETTINGS = {
 };
 
 const INITIAL_ADMIN_ACCOUNTS = [
-  { id: "super_admin", label: "👑 Super Admin (ประธานหมู่บ้าน)", pass: "123456" },
-  { id: "office", label: "📋 Admin (เจ้าหน้าที่ธุรการ)", pass: "office1234" },
-  { id: "accountant", label: "💰 Account (ฝ่ายบัญชี)", pass: "acc1234" },
-  { id: "maintenance", label: "🔧 Maintenance (ช่างซ่อมบำรุง)", pass: "maint1234" },
-  { id: "security", label: "🛡️ Security (รปภ. / รักษาความปลอดภัย)", pass: "sec1234" },
+  { id: "super_admin", label: "👑 ประธานหมู่บ้าน", pass: "123456" },
+  { id: "office", label: "📋 กรรมการ", pass: "office1234" },
+  { id: "accountant", label: "💰 ฝ่ายบัญชี", pass: "acc1234" },
+  { id: "maintenance", label: "🔧 ซ่อมบำรุง", pass: "maint1234" },
+  { id: "security", label: "🛡️ รักษาความปลอดภัย", pass: "sec1234" },
 ];
 
 const INITIAL_ROLE_PERMISSIONS = {
