@@ -426,13 +426,37 @@ function AdminApp({ session, settings, houses, setHouses, slips, setSlips, repai
 
   const filteredHouses = houses.filter(h => h.houseNo.includes(searchTerm) || (h.ownerName && h.ownerName.includes(searchTerm)));
 
-  const handleSaveEditHouse = (e) => {
-    e.preventDefault();
-    if (!editingHouse) return;
-    setHouses(houses.map(h => h.id === editingHouse.id ? editingHouse : h));
-    alert("อัปเดตข้อมูลสำเร็จ");
-    setEditingHouse(null);
-  };
+const handleSaveEditHouse = async (e) => {
+e.preventDefault();
+if (!editingHouse) return;
+console.log("editingHouse =", editingHouse);
+try {
+const { data, error } = await supabase
+.from("residents_debt")
+.update({
+owner_name: editingHouse.ownerName,
+phone: editingHouse.phone
+})
+.eq("id", editingHouse.id)
+.select();
+console.log("UPDATE DATA =", data);
+console.log("UPDATE ERROR =", error);
+if (error) {
+alert("บันทึกไม่สำเร็จ: " + error.message);
+return;
+}
+alert("อัปเดตข้อมูลสำเร็จ");
+setHouses(
+houses.map((h) =>
+h.id === editingHouse.id ? editingHouse : h
+)
+);
+setEditingHouse(null);
+} catch (err) {
+console.error(err);
+alert("ERROR: " + err.message);
+}
+};
 
   const handleApproveSlip = (slipId, houseNo) => {
     setSlips(slips.map(s => s.id === slipId ? { ...s, status: "อนุมัติแล้ว" } : s));
@@ -553,7 +577,7 @@ export default function App() {
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [rolePermissions, setRolePermissions] = useState(INITIAL_ROLE_PERMISSIONS);
   const [adminAccounts] = useState(INITIAL_ADMIN_ACCOUNTS);
-  const [houses, setHouses] = useState(GENERATED_HOUSES);
+  const [houses, setHouses] = useState([]);
   const [slips, setSlips] = useState(INITIAL_SLIPS);
   const [repairs, setRepairs] = useState(INITIAL_REPAIRS);
 
@@ -564,7 +588,7 @@ export default function App() {
         const { data, error } = await supabase.from("residents_debt").select("*");
         if (!error && data && data.length > 0) {
           const mapped = data.map((item, index) => ({
-            id: item.id || (index + 1),
+            id: item.id,
             houseNo: item.unit_number || `399/${index + 1}`,
             ownerName: item.owner_name || `คุณลูกบ้าน ${index + 1}`,
             phone: item.phone ? String(item.phone) : `08${String(index + 1).padStart(8, '0')}`,
